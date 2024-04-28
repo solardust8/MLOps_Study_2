@@ -30,6 +30,14 @@ Run `pip install -r requirements.txt`
 
 **IMPORTANT**: .safetensors files are not stored neither in Git LFS nor in DVC repo, but in [Google Drife weights folder](https://drive.google.com/drive/folders/1rabrFtLligrzg1MyzYHPqreOURJ5Pq1S?usp=sharing). Before building, consider manually downloading the safetensors files and placing them to `weigths/<model_name>` folders together with `config.json` files.
 
+## Hadoop DFS
+
+In this practice assignment **HDFS** plays a role of a log storage (no complex functionality tested, just learning to set up basic namenode/datanode in a single-node configuration to later write log file in).
+In order to get HDFS running, you need to optionaly modify and then move `docker-compose(move to Hadoop).yml` file in the root of the repi to a `Hadoop/` [**submodule**](https://github.com/big-data-europe/docker-hadoop) directory and run `docker-compose up`.
+
+**IMPORTANT**: check whether you have added any IP alias or you have a hostname `datanode` mapped to a desired IP in `hosts` file.
+
+
 ## Primitive API
 
 API utilizes FastAPI lib. Server is ran with `uvicorn src.run:app --host 0.0.0.0 --port 8000`. See more at [FastAPI page](https://fastapi.tiangolo.com/).
